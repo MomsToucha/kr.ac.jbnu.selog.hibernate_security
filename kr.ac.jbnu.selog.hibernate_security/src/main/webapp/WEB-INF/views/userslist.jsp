@@ -57,6 +57,11 @@
 		 		<a href="<c:url value='/newuser' />">Add New User</a>
 		 	</div>
 	 	</sec:authorize>
+	 	<sec:authorize access="hasRole('USER')">
+	 		<div class="well">
+		 		<a href="<c:url value='/index' />">go to Index</a>
+		 	</div>	
+	 	</sec:authorize>
    	</div>
 </body>
 </html>

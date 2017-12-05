@@ -63,6 +63,17 @@ public class AppController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "userslist";
 	}
+	
+	@RequestMapping(value = {"/index"}, method = RequestMethod.GET)
+	   public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+	      
+		   User user = new User();
+		      model.addAttribute("user", user);
+		      model.addAttribute("edit", false);
+		      model.addAttribute("loggedinuser", getPrincipal());
+	      
+	      return "index";
+	   }
 
 	/**
 	 * This method will provide the medium to add a new user.
