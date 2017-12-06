@@ -1,3 +1,9 @@
+--- create database and set previledge to root account
+
+create database simpleweb;
+use simpleweb;
+grant all privileges on simpleweb.* to root@localhost ;
+
 /*All User's gets stored in APP_USER table*/
 create table APP_USER (
    id BIGINT NOT NULL AUTO_INCREMENT,
@@ -26,6 +32,16 @@ CREATE TABLE APP_USER_USER_PROFILE (
     CONSTRAINT FK_APP_USER FOREIGN KEY (user_id) REFERENCES APP_USER (id),
     CONSTRAINT FK_USER_PROFILE FOREIGN KEY (user_profile_id) REFERENCES USER_PROFILE (id)
 );
+
+CREATE TABLE Post (
+	post_key int not null AUTO_INCREMENT,
+	post_title varchar(200) not null,
+	post_content varchar(5000) not null,
+	post_visible int not null,
+	post_owner varchar(30) not null,
+	primary key(post_key)
+);
+
   
 /* Populate USER_PROFILE Table */
 INSERT INTO USER_PROFILE(type)
@@ -37,6 +53,13 @@ VALUES ('ADMIN');
 INSERT INTO USER_PROFILE(type)
 VALUES ('DBA');
   
+/* post table testing */
+INSERT INTO Post (post_title, post_content, post_visible, post_owner)
+VALUES("test title", "test content", 1, "song");  
+INSERT INTO Post (post_title, post_content, post_visible, post_owner)
+VALUES("test title", "test content", 1, "song");  
+INSERT INTO Post (post_title, post_content, post_visible, post_owner)
+VALUES("test title", "test content", 1, "song");  
   
 /* Populate one Admin User which will further create other users for the application using GUI */
 INSERT INTO APP_USER(sso_id, password, first_name, last_name, email)

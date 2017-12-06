@@ -17,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -26,8 +27,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import kr.ac.jbnu.selog.model.Post;
 import kr.ac.jbnu.selog.model.User;
 import kr.ac.jbnu.selog.model.UserProfile;
+import kr.ac.jbnu.selog.service.PostService;
 import kr.ac.jbnu.selog.service.UserProfileService;
 import kr.ac.jbnu.selog.service.UserService;
 
@@ -36,6 +39,9 @@ import kr.ac.jbnu.selog.service.UserService;
 @SessionAttributes("roles")
 public class AppController {
 
+	@Autowired
+	PostService postService;
+	
 	@Autowired
 	UserService userService;
 	
@@ -51,10 +57,21 @@ public class AppController {
 	@Autowired
 	AuthenticationTrustResolver authenticationTrustResolver;
 	
+	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
+	public String listUserPosts(Model model) {
+		List<User> users = userService.findAllUsers();
+		model.addAttribute("users", users);
+		model.addAttribute("loggedinuser", getPrincipal());
+		
+		List<Post> posts = postService.listPosts();
+		//model.addAttribute("post", new Post());
+		model.addAttribute("listPosts", posts);
+		return "userslist";
+	}
 	
 	/**
 	 * This method will list all existing users.
-	 */
+	 
 	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
 	public String listUsers(ModelMap model) {
 
@@ -63,7 +80,7 @@ public class AppController {
 		model.addAttribute("loggedinuser", getPrincipal());
 		return "userslist";
 	}
-	
+	*/
 	@RequestMapping(value = {"/index"}, method = RequestMethod.GET)
 	   public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 	      

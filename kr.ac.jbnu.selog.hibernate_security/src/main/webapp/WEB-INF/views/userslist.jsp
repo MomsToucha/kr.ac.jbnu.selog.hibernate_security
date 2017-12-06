@@ -2,7 +2,8 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-
+<!-- ck finder -->
+<%@ taglib uri="http://cksource.com/ckfinder" prefix="ckfinder" %>
 <html>
 
 <head>
@@ -10,10 +11,14 @@
 	<title>Users List</title>
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+<!-- ck -->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/ckeditor/ckeditor.js"/></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/ckfinder/ckfinder.js"></script>
 </head>
 
 <body>
-	<div class="generic-container">
+<!-- 	<div class="generic-container">
+ -->	<div class="">
 		<%@include file="authheader.jsp" %>	
 		<div class="panel panel-default">
 			  <!-- Default panel contents -->
@@ -48,10 +53,12 @@
 							<td><a href="<c:url value='/delete-user-${user.ssoId}' />" class="btn btn-danger custom-width">delete</a></td>
         				</sec:authorize>
 					</tr>
+					
 				</c:forEach>
 	    		</tbody>
 	    	</table>
 		</div>
+		
 		<sec:authorize access="hasRole('ADMIN')">
 		 	<div class="well">
 		 		<a href="<c:url value='/newuser' />">Add New User</a>
@@ -62,6 +69,53 @@
 		 		<a href="<c:url value='/index' />">go to Index</a>
 		 	</div>	
 	 	</sec:authorize>
+	 	<sec:authorize access="hasRole('USER')">
+		 	<div class="well">
+		 	<textarea id="post_content" name="post_content"></textarea>
+			<script>
+				window.onload=function(){
+					
+					var editor = CKEDITOR.replace('post_content', {
+						filebrowserBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?${_csrf.parameterName}=${_csrf.token}',
+						filebrowserImageBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?type=Images?${_csrf.parameterName}=${_csrf.token}',
+						filebrowserFlashBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?type=Flash?${_csrf.parameterName}=${_csrf.token}',
+						filebrowserUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Files?${_csrf.parameterName}=${_csrf.token}',
+						filebrowserImageUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images?${_csrf.parameterName}=${_csrf.token}',
+						filebrowserFlashUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash?${_csrf.parameterName}=${_csrf.token}'
+					});
+
+					CKFinder.setupCKEditor(editor,'/ckfinder/')	
+				}
+			</script>
+			 
+		 	<!-- post list -->
+		   	<h3>Posts List</h3>
+			<table class="tg">
+			<tr>
+				<th width="80">Post ID</th>
+				<th width="120">Post Title</th>
+				<th width="120">Post Content</th>
+				<th width="120">Post Owner</th>
+				<th width="120">Post visible</th>
+				<th width="60">Edit</th>
+				<th width="60">Delete</th>
+			</tr>
+			<c:forEach items="${listPosts}" var="post">
+				<tr>
+					<td>${post.post_key}</td>
+					<td>${post.post_title}</td>
+					<td>${post.post_content}</td>
+					<td>${post.post_owner}</td>	
+					<td>${post.post_visible}</td>
+					<td><a href="noidea" >Edit</a></td>
+					<td><a href="noidea" >Delete</a></td>
+				</tr>
+			</c:forEach>
+		 
+		 
+		</table>
+		</div>	
+		</sec:authorize>
    	</div>
 </body>
 </html>
