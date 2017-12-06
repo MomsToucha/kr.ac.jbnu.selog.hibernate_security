@@ -1,8 +1,13 @@
 package kr.ac.jbnu.selog.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -38,6 +43,10 @@ import kr.ac.jbnu.selog.service.UserService;
 @RequestMapping("/")
 @SessionAttributes("roles")
 public class AppController {
+	
+	
+	
+
 
 	@Autowired
 	PostService postService;
@@ -67,6 +76,13 @@ public class AppController {
 		//model.addAttribute("post", new Post());
 		model.addAttribute("listPosts", posts);
 		return "userslist";
+	}
+	
+	
+	@RequestMapping(value = { "/delete-user-{ssoId}" }, method = RequestMethod.POST)
+	public String doSomeThing() {
+		
+		return "redirect:/list";
 	}
 	
 	/**
@@ -273,6 +289,15 @@ public class AppController {
 	    final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    return authenticationTrustResolver.isAnonymous(authentication);
 	}
+	
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException,
+	            ServletException {
+	    HttpServletResponse response = (HttpServletResponse) resp;
+	    response.addHeader("X-Frame-Options", "DENY");    
+	    chain.doFilter(req, resp);
+	} 
 
 
 }
+
+

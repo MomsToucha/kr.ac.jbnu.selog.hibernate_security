@@ -28,25 +28,25 @@
   <meta name="twitter:image" content="">
 
   <!-- Fav and touch icons -->
-  <link rel="shortcut icon" href="resources/img/icons/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/img/icons/114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/img/icons/72x72.png">
-  <link rel="apple-touch-icon-precomposed" href="resources/img/icons/default.png">
+  <link rel="shortcut icon" href="static/img/icons/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/img/icons/114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/img/icons/72x72.png">
+  <link rel="apple-touch-icon-precomposed" href="static/img/icons/default.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="resources/bootstrap_lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/bootstrap_lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="resources/bootstrap_lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="resources/bootstrap_lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
-  <link href="resources/bootstrap_lib/owlcarousel/owl.theme.min.css" rel="stylesheet">
-  <link href="resources/bootstrap_lib/owlcarousel/owl.transitions.min.css" rel="stylesheet">
+  <link href="static/bootstrap_lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/bootstrap_lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/bootstrap_lib/owlcarousel/owl.theme.min.css" rel="stylesheet">
+  <link href="static/bootstrap_lib/owlcarousel/owl.transitions.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="resources/css/style.css" rel="stylesheet">
+  <link href="static/css/style.css" rel="stylesheet">
 
   <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
   <link href="#" id="colour-scheme" rel="stylesheet">
@@ -94,10 +94,12 @@
                 </address>
             </div>
             <div class="col-md-6">
+            
               <!--Colour & Background Switch for demo - @todo: remove in production-->
               <h3>
                   Theme Variations
                 </h3>
+              
               <div class="switcher">
                 <div class="cols">
                   Backgrounds:
@@ -106,6 +108,8 @@
                   <a
                     href="#city" class="background city " title="City">City</a> <a href="#metro" class="background metro " title="Metro">Metro</a>
                 </div>
+              </div>
+             <!--    
                 <div class="cols">
                   Colours:
                   <br>
@@ -113,7 +117,8 @@
                   nge" class="colour orange active" title="Orange">Orange</a> <a href="#green" class="colour green " title="Green">Green</a> <a href="#blue" class="colour blue " title="Blue">Blue</a> <a href="#lavender" class="colour lavender "
                     title="Lavender">Lavender</a>
                 </div>
-              </div>
+              
+               -->
               <p>
                 <small>Selection is not persistent.</small>
               </p>
@@ -129,7 +134,7 @@
               <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
               <a class="navbar-brand" href="home" title="Home">
                 <h1 class="hidden">
-                    <img src="resources/img/logo.png" alt="Flexor Logo">
+                    <img src="static/img/logo.png" alt="Flexor Logo">
                     Blues
                   </h1>
               </a>
@@ -236,7 +241,7 @@
                   <a href="register" class="btn btn-more btn-lg i-right">try Now<i class="fa fa-plus"></i></a>
                 </div>
                 <div class="col-md-6 col-md-pull-6 hidden-xs">
-                  <img src="resources/img/slides/slide1.png" alt="Slide 1" class="center-block img-responsive">
+                  <img src="static/img/slides/slide1.png" alt="Slide 1" class="center-block img-responsive">
                 </div>
               </div>
             </div>
@@ -254,7 +259,7 @@
                   <a href="about" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a>
                 </div>
                 <div class="col-md-6 hidden-xs">
-                  <img src="resources/img/slides/slide2.png" alt="Slide 2" class="center-block img-responsive">
+                  <img src="static/img/slides/slide2.png" alt="Slide 2" class="center-block img-responsive">
                 </div>
               </div>
             </div>
@@ -286,7 +291,7 @@
         <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project1.png" alt="Project 1 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project1.png" alt="Project 1 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 1</span> </span>
                 </span>
@@ -300,7 +305,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project2.png" alt="Project 2 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project2.png" alt="Project 2 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 2</span> </span>
                 </span>
@@ -314,7 +319,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project3.png" alt="Project 3 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project3.png" alt="Project 3 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 3</span> </span>
                 </span>
@@ -328,7 +333,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project4.png" alt="Project 4 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project4.png" alt="Project 4 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 4</span> </span>
                 </span>
@@ -342,7 +347,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project5.png" alt="Project 5 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project5.png" alt="Project 5 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 5</span> </span>
                 </span>
@@ -356,7 +361,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project6.png" alt="Project 6 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project6.png" alt="Project 6 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 6</span> </span>
                 </span>
@@ -370,7 +375,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project7.png" alt="Project 7 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project7.png" alt="Project 7 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 7</span> </span>
                 </span>
@@ -384,7 +389,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project8.png" alt="Project 8 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project8.png" alt="Project 8 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 8</span> </span>
                 </span>
@@ -398,7 +403,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project9.png" alt="Project 9 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project9.png" alt="Project 9 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 9</span> </span>
                 </span>
@@ -412,7 +417,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project10.png" alt="Project 10 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project10.png" alt="Project 10 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 10</span> </span>
                 </span>
@@ -426,7 +431,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project11.png" alt="Project 11 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project11.png" alt="Project 11 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 11</span> </span>
                 </span>
@@ -440,7 +445,7 @@
           </div>
           <div class="item">
             <a href="#" class="overlay-wrapper">
-                <img src="resources/img/showcase/project12.png" alt="Project 12 image" class="img-responsive underlay">
+                <img src="static/img/showcase/project12.png" alt="Project 12 image" class="img-responsive underlay">
                 <span class="overlay">
                   <span class="overlay-content"> <span class="h4">Project 12</span> </span>
                 </span>
@@ -615,7 +620,7 @@ Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQu
             </h3>
           <blockquote>
             <p>Our productivity &amp; sales are up! Customers are happy &amp; we couldn't be happier with this product!</p>
-            <img src="resources/img/misc/charles-quote.png" alt="Charles Spencer Chaplin">
+            <img src="static/img/misc/charles-quote.png" alt="Charles Spencer Chaplin">
             <small>
                 <strong>Charles Chaplin</strong>
                 <br>
@@ -687,32 +692,32 @@ Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQu
             <!--Client logos should be within a 120px wide by 60px height image canvas-->
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 1">
-                  <img src="resources/img/clients/client1.png" alt="Client 1 logo" class="img-responsive">
+                  <img src="static/img/clients/client1.png" alt="Client 1 logo" class="img-responsive">
                 </a>
             </div>
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 2">
-                  <img src="resources/img/clients/client2.png" alt="Client 2 logo" class="img-responsive">
+                  <img src="static/img/clients/client2.png" alt="Client 2 logo" class="img-responsive">
                 </a>
             </div>
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 3">
-                  <img src="resources/img/clients/client3.png" alt="Client 3 logo" class="img-responsive">
+                  <img src="static/img/clients/client3.png" alt="Client 3 logo" class="img-responsive">
                 </a>
             </div>
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 4">
-                  <img src="resources/img/clients/client4.png" alt="Client 4 logo" class="img-responsive">
+                  <img src="static/img/clients/client4.png" alt="Client 4 logo" class="img-responsive">
                 </a>
             </div>
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 5">
-                  <img src="resources/img/clients/client5.png" alt="Client 5 logo" class="img-responsive">
+                  <img src="static/img/clients/client5.png" alt="Client 5 logo" class="img-responsive">
                 </a>
             </div>
             <div class="col-xs-6 col-md-2">
               <a href="https://bootstrapmade.com" title="Client 6">
-                  <img src="resources/img/clients/client6.png" alt="Client 6 logo" class="img-responsive">
+                  <img src="static/img/clients/client6.png" alt="Client 6 logo" class="img-responsive">
                 </a>
             </div>
           </div>
@@ -722,7 +727,7 @@ Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQu
   </div>
 
   <!-- ======== @Region: #footer ======== -->
-  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="resources/img/bg_footer-map.png" data-stellar-background-ratio="0.4">
+  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img="static/img/bg_footer-map.png" data-stellar-background-ratio="0.4">
     <div class="container">
 
       <div class="row" id="contact">
@@ -814,22 +819,22 @@ Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQu
   </footer>
 
   <!-- Required JavaScript Libraries -->
-  <script src="resources/bootstrap_lib/jquery/jquery.min.js"></script>
-  <script src="resources/bootstrap_lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="resources/bootstrap_lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="resources/bootstrap_lib/stellar/stellar.min.js"></script>
-  <script src="resources/bootstrap_lib/waypoints/waypoints.min.js"></script>
-  <script src="resources/bootstrap_lib/counterup/counterup.min.js"></script>
-  <script src="resources/js/contactform.js"></script>
+  <script src="static/bootstrap_lib/jquery/jquery.min.js"></script>
+  <script src="static/bootstrap_lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/bootstrap_lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="static/bootstrap_lib/stellar/stellar.min.js"></script>
+  <script src="static/bootstrap_lib/waypoints/waypoints.min.js"></script>
+  <script src="static/bootstrap_lib/counterup/counterup.min.js"></script>
+  <script src="static/js/contactform.js"></script>
 
   <!-- Template Specisifc Custom Javascript File -->
-  <script src="resources/js/custom.js"></script>
+  <script src="static/js/custom.js"></script>
 
   <!--Custom scripts demo background & colour switcher - OPTIONAL -->
-  <script src="resources/js/color-switcher.js"></script>
+  <script src="static/js/color-switcher.js"></script>
 
   <!--Contactform script -->
-  <script src="resources/js/contactform.js"></script>
+  <script src="static/js/contactform.js"></script>
 
 </body>
 

@@ -5,6 +5,7 @@
 <!-- ck finder -->
 <%@ taglib uri="http://cksource.com/ckfinder" prefix="ckfinder" %>
 <html>
+<% response.addHeader("X-Frame-Options", "SAMEORIGIN"); %> 
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -69,21 +70,13 @@
 		 		<a href="<c:url value='/index' />">go to Index</a>
 		 	</div>	
 	 	</sec:authorize>
-	 	<sec:authorize access="hasRole('USER')">
+	 	<%-- <sec:authorize access="hasRole('USER')"> --%>
 		 	<div class="well">
 		 	<textarea id="post_content" name="post_content"></textarea>
 			<script>
 				window.onload=function(){
 					
-					var editor = CKEDITOR.replace('post_content', {
-						filebrowserBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?${_csrf.parameterName}=${_csrf.token}',
-						filebrowserImageBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?type=Images?${_csrf.parameterName}=${_csrf.token}',
-						filebrowserFlashBrowseUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/ckfinder.html?type=Flash?${_csrf.parameterName}=${_csrf.token}',
-						filebrowserUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Files?${_csrf.parameterName}=${_csrf.token}',
-						filebrowserImageUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images?${_csrf.parameterName}=${_csrf.token}',
-						filebrowserFlashUploadUrl : '/kr.ac.jbnu.selog.hibernate_security/static/ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash?${_csrf.parameterName}=${_csrf.token}'
-					});
-
+					var editor = CKEDITOR.replace('post_content');
 					CKFinder.setupCKEditor(editor,'/ckfinder/')	
 				}
 			</script>
@@ -115,7 +108,7 @@
 		 
 		</table>
 		</div>	
-		</sec:authorize>
+		<%-- </sec:authorize> --%>
    	</div>
 </body>
 </html>
